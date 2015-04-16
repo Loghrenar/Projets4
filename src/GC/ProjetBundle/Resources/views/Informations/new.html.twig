@@ -1,0 +1,15 @@
+{% extends 'GCProjetBundle::layoutt.html.twig' %}
+
+{% block body -%}
+    <h1>Informations creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('gc_informations') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

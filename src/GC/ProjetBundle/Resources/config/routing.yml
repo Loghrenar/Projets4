@@ -1,0 +1,157 @@
+gc_projet:
+    path:     /
+    defaults: { _controller: GCProjetBundle:Default:index }
+
+gc_projet_site:
+    path:     /site
+    defaults:  { _controller: GCProjetBundle:Site:index }
+
+gc_projet_tableau:
+    path:     /tableau
+    defaults:  { _controller: GCProjetBundle:Tableau:index }
+
+gc_projet_programme:
+    path:     /programme
+    defaults:  { _controller: GCProjetBundle:Programme:index }
+
+gc_projet_contact:
+    path:     /contact
+    defaults:  { _controller: GCProjetBundle:Contact:index }
+
+gc_programmes :
+    path:    /programmes
+    defaults:  { _controller: GCProjetBundle:Programmes:index}
+
+gc_programmes_show :
+    path:    /{id}/programmes_show
+    defaults:  { _controller: GCProjetBundle:Programmes:show}
+
+gc_programmes_edit :
+    path:    /{id}/programmes_edit
+    defaults:  { _controller: GCProjetBundle:Programmes:edit}
+
+gc_programmes_new :
+    path:    /programmes_new
+    defaults:  { _controller: GCProjetBundle:Programmes:new}
+
+gc_programmes_update:
+    path:     /{id}/update
+    defaults: { _controller: "GCProjetBundle:Programmes:update" }
+    methods:  [POST, PUT]
+
+gc_programmes_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GCProjetBundle:Programmes:delete" }
+    methods:  [POST, DELETE]
+
+
+gc_programmes_create:
+    path:     /create
+    defaults: { _controller: "GCProjetBundle:Programmes:create" }
+    methods:  POST
+
+gc_informations :
+    path:    /informations
+    defaults:  { _controller: GCProjetBundle:Informations:index}
+
+gc_informations_show :
+    path:    /{id}/informations_show
+    defaults:  { _controller: GCProjetBundle:Informations:show}
+
+gc_informations_edit :
+    path:    /{id}/informations_edit
+    defaults:  { _controller: GCProjetBundle:Informations:edit}
+
+gc_informations_new :
+    path:    /informations_new
+    defaults:  { _controller: GCProjetBundle:Informations:new}
+
+gc_informations_update:
+    path:     /{id}/update
+    defaults: { _controller: "GCProjetBundle:Informations:update" }
+    methods:  [POST, PUT]
+
+gc_informations_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GCProjetBundle:Informations:delete" }
+    methods:  [POST, DELETE]
+
+
+gc_informations_create:
+    path:     /create
+    defaults: { _controller: "GCProjetBundle:Informations:create" }
+    methods:  POST
+
+gc_bandeau :
+    path:    /bandeau
+    defaults:  { _controller: GCProjetBundle:Bandeau:index}
+
+gc_bandeau_show :
+    path:    /{id}/bandeau_show
+    defaults:  { _controller: GCProjetBundle:Bandeau:show}
+
+gc_bandeau_edit :
+    path:    /{id}/bandeau_edit
+    defaults:  { _controller: GCProjetBundle:Bandeau:edit}
+
+gc_bandeau_new :
+    path:    /bandeau_new
+    defaults:  { _controller: GCProjetBundle:Bandeau:new}
+
+gc_bandeau_update:
+    path:     /{id}/update
+    defaults: { _controller: "GCProjetBundle:Bandeau:update" }
+    methods:  [POST, PUT]
+
+gc_bandeau_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GCProjetBundle:Bandeau:delete" }
+    methods:  [POST, DELETE]
+
+
+gc_bandeau_create:
+    path:     /create
+    defaults: { _controller: "GCProjetBundle:Bandeau:create" }
+    methods:  POST
+
+gc_projet_utilisateurs:
+    path:     /uilisateurs
+    defaults:  { _controller: GCProjetBundle:Utilisateurs:afficheUsers }
+
+gc_project_supUsers:
+    path:     /utilisateurs/suppression/{id}
+    defaults: { _controller: GCProjetBundle:Utilisateurs:supUsers }
+    requirements:
+        id: \d*
+
+gc_playlist :
+    path:    /playlist
+    defaults:  { _controller: GCProjetBundle:Playlist:index}
+
+gc_playlist_show :
+    path:    /{id}/playlist_show
+    defaults:  { _controller: GCProjetBundle:Playlist:show}
+
+gc_playlist_edit :
+    path:    /{id}/playlist_edit
+    defaults:  { _controller: GCProjetBundle:Playlist:edit}
+
+gc_playlist_new :
+    path:    /playlist_new
+    defaults:  { _controller: GCProjetBundle:Playlist:new}
+
+gc_playlist_update:
+    path:     /{id}/update
+    defaults: { _controller: "GCProjetBundle:Playlist:update" }
+    methods:  [POST, PUT]
+
+gc_playlist_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GCProjetBundle:Playlist:delete" }
+    methods:  [POST, DELETE]
+
+
+gc_playlist_create:
+    path:     /create
+    defaults: { _controller: "GCProjetBundle:Playlist:create" }
+    methods:  POST

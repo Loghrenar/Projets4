@@ -1,0 +1,186 @@
+/*---------------------------------------------------- 	General------------------------------------------------------*/
+body {
+
+	font-family:'Montserrat',sans-serif;
+	font-size:16px;
+	line-height:1.7;
+	font-weight:400;
+	overflow-x:hidden;
+	width: 100%; 
+	height: 100%; 
+	overflow: hidden
+}
+.playball {
+	font-family:'Playball',cursive;
+}
+h1,h2,h3,h4,h5,h6 {
+	color:#333;
+	line-height:1.4;
+	font-weight:700;
+}
+.w960 {
+	max-width:960px;
+	margin:0px auto;
+}
+a,a:hover {
+	color:#cc580c;
+	text-decoration: none;
+}
+img {max-width: 100%;}
+
+
+
+
+/*******TELEVISION*******/
+
+.television{
+	padding:0;
+	margin: 0;
+	width:auto;
+	height: 720px;
+	background-image: url('bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+/*******TELEVISION header*******/
+
+.header{
+	width: 100%;
+	height: 75px;
+	background-color:#cdd1d4;
+	box-shadow: 0px 0px 10px #000; 
+	z-index: 1000
+}
+
+.header_2{
+	position: absolute;
+	width: 100%;
+	height: 125px;
+	background-color:#707070;
+	box-shadow: 0px 0px 10px #000; 
+}
+
+.logo{
+	position: absolute;
+	float: left;
+	z-index: 1000;
+	width: 300px;
+	height: 125px;
+	background-color:#cdd1d4;
+	box-shadow: 0px 0px 10px #000; 
+}
+
+.logo img{
+	padding: 35px;
+}
+
+#heure_{
+	font-size: 40px;
+	color: #7999b4;
+	float: right;
+	margin-right: 50px;
+}
+
+#date_{
+	font-size: 40px;
+	color: #404345;
+	float: left;
+	margin-left: 350px;
+}
+
+.header p{
+	color: #9c9c9c;
+	font-size: 20px;
+	position: absolute;
+	margin: 80px 0px 0px 330px;
+}
+
+/*******TELEVISION contenu*******/
+
+.contenu{
+	position: relative;
+	width: 100%;
+	padding: 120px 20px 20px 50px
+}
+
+h2{
+	padding-left: 20px;
+	font-size: 40px;
+	text-transform: uppercase;
+}
+
+.video{
+	float: left;
+}
+
+.iframe{
+	border-top: solid 4px #688dab;
+}
+
+.after{
+	float: left;
+	padding-left: 100px;
+	text-align: center;	
+}
+
+.after li{
+	list-style: none;
+	font-size: 20px;
+	width: 100%;
+	background-color: #c5b6b6;
+	padding: 5px 50px 5px 50px;
+}
+
+.after li p{
+	font-size: 30px;
+	text-transform: uppercase;
+}
+
+hr{
+	margin: 0 auto;
+	margin-top:10px;
+	border: solid 1px #688dab;
+}
+
+/*******TELEVISION footer*******/
+
+.footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 75px;
+	background-color:#cdd1d4;
+	box-shadow: 0px 0px 10px #000; 
+}
+
+.info{
+	position: absolute;
+	bottom: 0;
+	float: left;
+	z-index: 1000;
+	width: 300px;
+	height: 75px;
+	background-color:#cdd1d4;
+	box-shadow: 0px 0px 10px #000; 
+}
+
+.info p{
+	font-size: 50px;
+	margin: 0px 0px 0px 10px;
+}
+
+#boxe_defil { 
+	position:relative;
+	width:100%; 
+	height:75px; 
+	overflow:hidden; 
+	float: right; 
+}
+
+#defile { 
+	font-size: 40px;
+	position:absolute;
+	margin-top:1px; 
+	background-color:transparent; 
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8" />
+    <title>
+        {% block title %}MMITV{% endblock %}
+    </title>
+    {% stylesheets
+    "bundles/gcprojet/css/animate.css"
+    "bundles/gcprojet/css/theme.css"
+    "bundles/gcprojet/css/font-awesome.css"
+    "bundles/gcprojet/css/bootstrap.css"
+    filter="cssrewrite"
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+{% endblock %}
+{% javascripts
+'@GCProjetBundle/Resources/public/js/date.js'
+'@GCProjetBundle/Resources/public/js/heure.js'%}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% block js %}
+{% endblock %}
+</body>
+</html>

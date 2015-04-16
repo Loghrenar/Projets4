@@ -1,0 +1,88 @@
+{% extends 'GCProjetBundle::layoutt.html.twig' %}
+{% block head %}
+    {{ parent() }}
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
+          rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+{% endblock %}
+
+
+{% block body %}
+<!--wrapper start-->
+<div class="wrapper" id="wrapper">
+
+    <!--header-->
+    <header>
+        <div class="banner row" id="banner">
+            <div class="parallax text-center"
+                 style="background-image: url(http://wowthemes.net/demo/leroy/img/dummy1.jpg);">
+                <div class="parallax-pattern-overlay">
+                    <div class="container text-center" style="padding-top:170px;">
+                        <a href="#"><img id="site-title" class=" wow fadeInDown" wow-data-delay="0.0s"
+                                         wow-data-duration="0.9s" src="{{ asset('bundles/gcprojet/img/logo_mmitv3.png') }}" alt="logo"/></a>
+
+                        <h2 class="intro wow zoomIn" wow-data-delay="0.4s" wow-data-duration="0.9s">welcome !</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </header>
+        {% block menu %}
+            {{ parent() }}
+        {% endblock %}
+    <h1>Listes des programmes</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Nom</th>
+                <th>Durée</th>
+                <th>Type</th>
+                <th>Fichier</th>
+                <th>Playlist</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('gc_programmes_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.progDesc }}</td>
+                <td>{{ entity.progName }}</td>
+                <td>{{ entity.progDuree|date('H:i:s') }}</td>
+                <td>{{ entity.progType }}</td>
+                <td>{{ entity.progFichier }}</td>
+                <td>{% for playlist in entity.playlist %}
+                {{ playlist.playDesc }}
+                {% endfor %}
+                </td>
+                <td>
+                <ul>
+
+                    <li>
+                        <a href="{{ path('gc_programmes_show', { 'id': entity.id }) }}">Afficher</a>
+                    </li>
+
+                    <li>
+                        <a href="{{ path('gc_programmes_edit', { 'id': entity.id }) }}">Modifier</a>
+                    </li>
+
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('gc_programmes_new') }}">
+                Créer un programme
+            </a>
+        </li>
+    </ul>
+    </div>
+        {% endblock %}

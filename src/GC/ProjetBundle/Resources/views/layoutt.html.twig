@@ -1,0 +1,44 @@
+{% extends '::basee.html.twig' %}
+{% block head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+{% block body %}
+    {% block menu %}
+    <div class="menu">
+        <div class="navbar-wrapper">
+            <div class="container">
+                <div class="navwrapper">
+                    <div class="navbar navbar-inverse navbar-static-top">
+                        <div class="container">
+                            <div class="navArea">
+                                <div class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav">
+                                        <li class="menuItem active"><a href="{{ path('gc_projet_site') }}">ACCUEIL</a></li>
+                                        <li class="menuItem"><a href="{{ path('gc_projet_programme') }}"> PROGRAMMES</a></li>
+        {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                                        <li class="menuItem"><a href="{{ path('gc_projet_utilisateurs') }}">UTILISATEURS</a></li>
+                                       {% endif %}
+                                        {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                                            <li><a href="{{ path("gc_bandeau") }}">BANDEAU</a></li>
+
+                                        {% endif %}
+                                        <li><a href="{{ path("gc_playlist") }}">PLAYLIST</a></li>
+                                        {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                                            <li class="menuItem"><a href="{{ path('fos_user_security_logout') }}">DÉCONNEXION</a></li>
+                                        {% else %}
+
+                                            <li class="menuItem"><a href="{{ path('fos_user_security_login') }}">CONNEXION</a></li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+{% endblock %}
+{% block js %}
+{% endblock %}

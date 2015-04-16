@@ -1,0 +1,230 @@
+<?php
+
+namespace GC\ProjetBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Programmes
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Programmes
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prog_desc", type="string", length=255)
+     */
+    private $progDesc;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prog_name", type="string", length=255)
+     */
+    private $progName;
+
+    /**
+     * @var /DateTime
+     *
+     * @ORM\Column(name="prog_duree", type="time")
+     */
+    private $progDuree;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prog_type", type="string", length=255)
+     */
+    private $progType;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prog_fichier", type="string", length=255)
+     */
+    private $progFichier;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="GC\ProjetBundle\Entity\Playlist", mappedBy="programmes")
+     */
+    private $playlist;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+
+    /**
+     * Set progDesc
+     *
+     * @param string $progDesc
+     * @return Programmes
+     */
+    public function setProgDesc($progDesc)
+    {
+        $this->progDesc = $progDesc;
+
+        return $this;
+    }
+
+    /**
+     * Get progDesc
+     *
+     * @return string 
+     */
+    public function getProgDesc()
+    {
+        return $this->progDesc;
+    }
+
+    /**
+     * Set progName
+     *
+     * @param string $progName
+     * @return Programmes
+     */
+    public function setProgName($progName)
+    {
+        $this->progName = $progName;
+
+        return $this;
+    }
+
+    /**
+     * Get progName
+     *
+     * @return string 
+     */
+    public function getProgName()
+    {
+        return $this->progName;
+    }
+
+    /**
+     * Set progDuree
+     *
+     * @param \DateTime $progDuree
+     * @return Programmes
+     */
+    public function setProgDuree($progDuree)
+    {
+        $this->progDuree = $progDuree;
+
+        return $this;
+    }
+
+    /**
+     * Get progDuree
+     *
+     * @return \DateTime 
+     */
+    public function getProgDuree()
+    {
+        return $this->progDuree;
+    }
+
+    /**
+     * Set progType
+     *
+     * @param string $progType
+     * @return Programmes
+     */
+    public function setProgType($progType)
+    {
+        $this->progType = $progType;
+
+        return $this;
+    }
+
+    /**
+     * Get progType
+     *
+     * @return string 
+     */
+    public function getProgType()
+    {
+        return $this->progType;
+    }
+
+    /**
+     * Set progFichier
+     *
+     * @param string $progFichier
+     * @return Programmes
+     */
+    public function setProgFichier($progFichier)
+    {
+        $this->progFichier = $progFichier;
+
+        return $this;
+    }
+
+    /**
+     * Get progFichier
+     *
+     * @return string 
+     */
+    public function getProgFichier()
+    {
+        return $this->progFichier;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->playlist = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add playlist
+     *
+     * @param \GC\ProjetBundle\Entity\Playlist $playlist
+     * @return Programmes
+     */
+    public function addPlaylist(\GC\ProjetBundle\Entity\Playlist $playlist)
+    {
+        $this->playlist[] = $playlist;
+
+        return $this;
+    }
+
+    /**
+     * Remove playlist
+     *
+     * @param \GC\ProjetBundle\Entity\Playlist $playlist
+     */
+    public function removePlaylist(\GC\ProjetBundle\Entity\Playlist $playlist)
+    {
+        $this->playlist->removeElement($playlist);
+    }
+
+    /**
+     * Get playlist
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPlaylist()
+    {
+        return $this->playlist;
+    }
+}

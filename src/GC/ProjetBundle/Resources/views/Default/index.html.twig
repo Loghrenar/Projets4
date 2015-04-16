@@ -1,0 +1,90 @@
+{% extends 'GCProjetBundle::layout.html.twig' %}
+{% block head %}
+	{{ parent() }}
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+{% endblock %}
+{% block body %}
+<!--wrapper start-->
+<div class="wrapper" id="wrapper">
+
+	<div class="television">
+		<div class="header_2">
+			<div class="header">
+				<div class="logo">
+					 <a href="{{ path('gc_projet_site') }}"><img src="{{ asset('bundles/gcprojet/img/logo_mmitv3.png') }}"/></a>
+				</div>
+				<span id="date_"></span>
+
+
+				<span id="heure_"></span>
+
+
+				<p>Votre chaîne étudiante !</p>
+			</div>
+		</div>
+
+		<div class="contenu">
+			<div class="video">
+				<h2>Intégration MMI</h2>
+				<div class="iframe">
+					<iframe width="1000" height="550" src="https://www.youtube.com/embed/DjIum0YmVD0?rel=0&amp;showinfo=0&autoplay=1&loop=1" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="after">
+				<h2>a suivre</h2>
+				<table>
+					<li style="border-top: solid 4px #688dab;"></li>
+					{% for prog in programmes %}
+					<li><p>{{ prog.progDesc }}</p><span>{{ prog.progDuree|date('H:i:s') }}</span><hr></li>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="info">
+				<p>INFO 24/7</p>
+			</div>
+
+			<div id="boxe_defil">
+				<div id="defile">
+				<p>
+				{% for band in bandeau %}
+				{{ band.bandNom}} ----
+				{% endfor %}
+				</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div><!--wrapper end-->
+
+<script type="text/javascript">
+	var defile;// l'element a deplacer
+	var psinit = 2000; // position horizontale de depart
+	var pscrnt = psinit;
+
+	function texteDefile() {
+		if (!defile) defile = document.getElementById('defile');
+		if (defile) {
+			if(pscrnt < ( - defile.offsetWidth) ){
+				pscrnt = psinit;
+			} else {
+				pscrnt+= -1; // pixel par deplacement
+			}
+			defile.style.left = pscrnt+"px";
+		}
+	}
+	setInterval("texteDefile()",5); // delai de deplacement
+
+</script>
+
+{% endblock %}
+{% block js %}
+<script type="text/javascript">window.onload = date('date_');</script>
+<script type="text/javascript">window.onload = heure('heure_');</script>
+{% endblock %}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8" />
+    <title>
+        {% block title %}MMITV{% endblock %}
+    </title>
+    {% stylesheets
+    "bundles/gcprojet/css/bootstrap.css"
+    "bundles/gcprojet/css/font-awesome.css"
+    "bundles/gcprojet/css/animate.css"
+    "bundles/gcprojet/css/theme.css"
+    filter="cssrewrite"
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+{% block menu %}
+    {% endblock %}
+{% endblock %}
+{% javascripts
+'@GCProjetBundle/Resources/public/js/jquery.js'
+'@GCProjetBundle/Resources/public/js/modernizr.js'
+'@GCProjetBundle/Resources/public/js/bootstrap.js'
+'@GCProjetBundle/Resources/public/js/menustick.js'
+'@GCProjetBundle/Resources/public/js/parallax.js'
+'@GCProjetBundle/Resources/public/js/easing.js'
+'@GCProjetBundle/Resources/public/js/wow.js'
+'@GCProjetBundle/Resources/public/js/smoothscroll.js'
+'@GCProjetBundle/Resources/public/js/masonry.js'
+'@GCProjetBundle/Resources/public/js/imgloaded.js'
+'@GCProjetBundle/Resources/public/js/classie.js'
+'@GCProjetBundle/Resources/public/js/colorfinder.js'
+'@GCProjetBundle/Resources/public/js/gridscroll.js'
+'@GCProjetBundle/Resources/public/js/contact.js'
+'@GCProjetBundle/Resources/public/js/common.js' %}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% block js %}
+{% endblock %}
+</body>
+</html>
